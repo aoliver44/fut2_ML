@@ -6,7 +6,11 @@ set.seed(12345)
 random_seeds <- sample(1:10000000, size = 20, replace = F)
 
 ## write random seeds to file
-readr::write_lines(random_seeds, file = "/quobyte/dglemaygrp/aoliver/yasmine/fut2_analysis_09032026/input_for_ml_models/random_seeds.txt", append = F)
+## path for data input
+input_for_ml_models <- "/quobyte/dglemaygrp/aoliver/yasmine/fut2_analysis_09032026/input_for_ml_models/"
+
+## write random seeds to file
+readr::write_lines(random_seeds, file = paste0(input_for_ml_models, "random_seeds.txt"), append = F)
 
 ## write run file
 run_file <- data.frame(program=character(), response=character(),
@@ -49,4 +53,4 @@ run_file <- run_file %>% dplyr::add_row(
 #   model = "mars"
 # )
 
-write.table(x = run_file, file = "/quobyte/dglemaygrp/aoliver/yasmine/fut2_analysis_09032026/input_for_ml_models/run_file.txt", sep = "\t", row.names = F, append = F, quote = F)
+write.table(x = run_file, file = paste0(input_for_ml_models, "run_file.txt"), sep = "\t", row.names = F, append = F, quote = F)
