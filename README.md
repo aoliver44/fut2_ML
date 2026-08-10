@@ -75,6 +75,18 @@ while read program response response_col dataset1 dataset2 model; do
 done < <(grep "taxahfe" ${WORKDIR}input_for_ml_models/run_file.txt)
 ```
 
-The parameters used for Taxahfe-ML are as follows:
+The parameters used for Taxahfe-ML are as follows (almost all are defaults for TaxaHFE-ML):
 
+- ```-s``` (subject identified): subject_id
+- ```-t``` (feature type): factor
+- ```-L``` (lowest taxonomic level for TaxaHFE-ML): 3
+- ```-nperm``` (number of RF permutations in the TaxaHFE-ML competitions): 40
+- ```--parallel_workers``` (number of parallel R session when usuable): 4
+- ```--model``` (ML model engine to run): rf (random forest)
+- ```-l``` (response label): feature_of_interest
+- ```-n``` (number of cores to use): 2
+- ```--metric``` (metric to optimize for ML, ie loss function): bal_accuracy (balanced acuracy)
+- ```-c``` (correlation level for TaxaHFE competition and ML feature engineering): 0.95
+- ```--vif_threshold``` (variance inflation factor threshold from pkg collinear): 10
+- ```--vif_preference``` (preference of features to retain on VIF analysis): path to file (see data/vif_preference.txt)
 - 
