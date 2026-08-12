@@ -89,4 +89,14 @@ The parameters used for Taxahfe-ML are as follows (almost all are defaults for T
 - ```-c``` (correlation level for TaxaHFE competition and ML feature engineering): 0.95
 - ```--vif_threshold``` (variance inflation factor threshold from pkg collinear): 10
 - ```--vif_preference``` (preference of features to retain on VIF analysis): path to file (see data/vif_preference.txt)
-- 
+- ```--pct_loss``` (prefer a more regularized model at expense to accuracy): 0 
+- ```--info_gain_n``` (keep only n features in feature engineering based on information gain): 0 (bypass filter)
+- ```--train_split``` (train-test split): 80% train, 20% test
+- ```--tune_time``` (allow HP tuning for n minutes): 5 minutes
+- ```--tune_length``` (limit HP tune combinations): 80
+- ```--tune_stop``` (stop tuning if no increase in performance for n combinations): 30
+- ```--folds``` (k folds for cross validation): 10
+- ```cv_repeats``` (n repeats for repeated cross validation): 3
+- ```--shap``` (run shap analysis): TRUE
+- ```--seed``` (random seed): random number
+
