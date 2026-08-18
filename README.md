@@ -231,3 +231,6 @@ signed_shap_plot <- signed_shap %>%
   theme_bw(base_size = 14) + theme(text = element_text(colour = "black"), axis.text = element_text(colour = "black"))
 detach()
 ```
+
+## Step 6: Collect all the data
+We've spent most of the time analyzing the feature importances of the models, but its worth taking a step back to look at the overall performance of the models. To do this, first use the run_file.txt to loop through all the outputs of TaxaHFE-ML, and collect data stored in the log files (balanced accuracy for training and test data). Next we just do a little bit of data wrangling to get the average performances. The code for this can be found in ```step6_collect_all_ml_scores.sh```, run on HIVE, and ```step7_analyze_scores.R``` (a very simple data wrangle script).
