@@ -7,4 +7,4 @@ scores <- readr::read_delim(file = "/home/rstudio/taxahfe_ml_outputs/tmp_scores_
 scores %>% dplyr::group_by(., response, model) %>%
   dplyr::summarise(., mean_bal_test = mean(bal_acc_test), 
                    mean_bal_train = mean(bal_acc_train), sd_test=sd(bal_acc_test), sd_train=sd(bal_acc_train),
-                   max_bal_acc=max(bal_acc_test)) %>% filter(., grepl("rf", model))
+                   max_bal_acc_test=max(bal_acc_test), n_models = n()) %>% filter(., grepl("rf", model))
